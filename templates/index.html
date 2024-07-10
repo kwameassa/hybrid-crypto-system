@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Crypto System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+    <div class="app">
+        <h1>Hybrid Crypto System</h1>
+        <p>This is a simple implementation of the Hybrid Cryptosystem</p>
+        <div class="quiz">
+            <h2>File Encryption and Upload</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="fileInput">Select one or more files:</label>
+                <input type="file" id="fileInput" name="file" multiple>
+                <label for="encryptionMethod">Select Encryption Method:</label>
+                <select id="encryptionMethod" name="encryption_method">
+                    <option value="RSA/AES">RSA/AES</option>
+                    <option value="ECC/AES">ECC/AES</option>
+                    <option value="NGOA-DE-RSA/M-AES">NGOA-DE-RSA/M-AES</option>
+                </select>
+                <label for="keyBits">Select Key Bits:</label>
+                <select id="keyBits" name="key_bits">
+                    <option value="128">128</option>
+                    <option value="192">192</option>
+                    <option value="256">256</option>
+                </select>
+                <button type="button" onclick="encryptAndUpload()">Encrypt and Upload</button>
+            </form>
+            <div id="fileList"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
